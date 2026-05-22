@@ -84,13 +84,11 @@
 
   sectionEls.forEach(s => animObserver.observe(s));
 
-  // ── Animate hero immediately on load ─────────────────────────────────────
-  // Hero is visible on load — IntersectionObserver may miss it
-  window.addEventListener('DOMContentLoaded', () => {
-    const heroItems = Array.from(document.querySelectorAll('#hero .animate-item'));
-    heroItems.forEach((item, i) => {
-      setTimeout(() => item.classList.add('visible'), 150 + i * 100);
-    });
+  // ── Animate hero immediately ──────────────────────────────────────────────
+  // Script is at end of <body> — DOM is already parsed, run directly
+  const heroItems = Array.from(document.querySelectorAll('#hero .animate-item'));
+  heroItems.forEach((item, i) => {
+    setTimeout(() => item.classList.add('visible'), 150 + i * 100);
   });
 
 }());
