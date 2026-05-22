@@ -65,6 +65,8 @@ button { font-family: var(--font); cursor: pointer; }
 /* Section inner wrapper */
 .section-inner {
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Section header (label + title) */
@@ -257,6 +259,8 @@ button { font-family: var(--font); cursor: pointer; }
   align-items: center;
   gap: 64px;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .hero-text { flex: 1; }
