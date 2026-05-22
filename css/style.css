@@ -413,3 +413,88 @@ button { font-family: var(--font); cursor: pointer; }
   flex-wrap: wrap;
   gap: 6px;
 }
+
+/* ── Experiencia section ─────────────────────────────────────────────────────── */
+#experiencia { background: var(--bg); }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 20px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 22px;
+  position: relative;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -17px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--navy);
+  flex-shrink: 0;
+}
+
+.timeline-body { flex: 1; }
+
+.timeline-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 3px;
+  flex-wrap: wrap;
+}
+.timeline-role {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.timeline-dates {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.timeline-company {
+  font-size: 13px;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+.timeline-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.timeline-bullets li {
+  font-size: 12px;
+  color: var(--subtle);
+  line-height: 1.5;
+  padding-left: 12px;
+  position: relative;
+}
+.timeline-bullets li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--navy);
+}
