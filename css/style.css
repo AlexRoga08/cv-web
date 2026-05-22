@@ -433,6 +433,8 @@ button { font-family: var(--font); cursor: pointer; }
 #experiencia { background: var(--bg); }
 
 .timeline {
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -596,7 +598,7 @@ button { font-family: var(--font); cursor: pointer; }
 /* ── Sobre mí section ────────────────────────────────────────────────────── */
 #sobre-mi { background: var(--bg); }
 
-.sobre-inner { max-width: 680px; }
+.sobre-inner { max-width: 680px; margin: 0 auto; }
 
 .sobre-content {
   display: flex;
@@ -625,7 +627,7 @@ button { font-family: var(--font); cursor: pointer; }
 /* ── Contacto section ────────────────────────────────────────────────────── */
 #contacto { background: var(--bg); }
 
-.contacto-inner { max-width: 560px; }
+.contacto-inner { max-width: 560px; margin: 0 auto; }
 
 .contacto-sub {
   font-size: 16px;
