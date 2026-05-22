@@ -498,3 +498,27 @@ button { font-family: var(--font); cursor: pointer; }
   left: 0;
   color: var(--navy);
 }
+
+/* ── Skills section ──────────────────────────────────────────────────────── */
+#skills { background: var(--bg); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 64px;
+}
+
+.skill-group-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
