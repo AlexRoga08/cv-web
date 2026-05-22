@@ -119,9 +119,10 @@ button { font-family: var(--font); cursor: pointer; }
 .nav-logo {
   font-size: 15px;
   font-weight: 800;
-  color: var(--navy);
   letter-spacing: -0.5px;
 }
+.nav-logo-first { color: var(--text); }
+.nav-logo-last  { color: var(--navy); }
 .nav-links {
   display: flex;
   align-items: center;
