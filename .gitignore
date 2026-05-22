@@ -3,6 +3,9 @@ Thumbs.db
 node_modules/
 .superpowers/
 docs/
+.tmp/
 *.docx
 package.json
 package-lock.json
+recortada.jpg
+Alejandro_Rodríguez_García.pdf
