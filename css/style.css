@@ -606,3 +606,55 @@ button { font-family: var(--font); cursor: pointer; }
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* ── Contacto section ────────────────────────────────────────────────────── */
+#contacto { background: var(--bg); }
+
+.contacto-inner { max-width: 560px; }
+
+.contacto-sub {
+  font-size: 16px;
+  color: var(--subtle);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.contacto-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.contacto-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.contacto-link:hover { color: var(--navy); }
+
+.contacto-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--navy);
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.contacto-link:hover .contacto-icon { background: var(--accent-bg); }
+
+.contacto-footer {
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
