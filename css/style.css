@@ -658,3 +658,58 @@ button { font-family: var(--font); cursor: pointer; }
   color: var(--muted);
   letter-spacing: 0.3px;
 }
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Tablet (768px – 1024px) */
+@media (max-width: 1024px) {
+  .section { padding: 80px 48px 40px; }
+  .nav { padding: 0 48px; }
+  .hero-name { font-size: 38px; }
+  .hero-photo { width: 150px; height: 150px; }
+  .hero-content { gap: 40px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+  .skills-grid { gap: 28px 40px; }
+  .education-grid { gap: 28px 32px; }
+  .section-num { font-size: 72px; }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  .section { padding: 72px 24px 32px; }
+  .nav { padding: 0 24px; }
+  .nav-links { gap: 16px; }
+  .nav-link:not(:last-child) { display: none; }
+
+  /* Hero: stack vertically */
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .hero-photo { width: 90px; height: 90px; align-self: flex-end; }
+  .hero-name { font-size: 32px; }
+  .hero-tagline { font-size: 14px; }
+  .hero-pills .pill { font-size: 11px; padding: 4px 10px; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; }
+  .scroll-hint { display: none; }
+
+  /* Projects: single column */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Skills: single column */
+  .skills-grid { grid-template-columns: 1fr; gap: 24px; }
+
+  /* Education: single column */
+  .education-grid { grid-template-columns: 1fr; gap: 24px; }
+
+  /* Hide side dots */
+  .dots-nav { display: none; }
+
+  /* Section title smaller */
+  .section-title { font-size: 26px; }
+  .section-num { display: none; }
+
+  /* Sobre mí */
+  .sobre-text { font-size: 14px; }
+  .sobre-highlight { font-size: 15px; }
+}
