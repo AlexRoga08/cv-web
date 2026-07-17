@@ -39,26 +39,12 @@
       "techs": ["Consultoría", "Automatización", "IA aplicada"]
     },
     {
-      "name": "Autorecomendador",
-      "tag": "Uso interno",
-      "desc": "Herramienta de asistencia para account executives. CRM integrado con el stock de venta que analiza el histórico de cada cliente y sugiere las mejores oportunidades para priorizar la gestión comercial.",
-      "descPdf": "CRM integrado con stock de venta que analiza el histórico de cada cliente y sugiere las mejores oportunidades para priorizar la gestión comercial.",
-      "techs": ["En producción", "Gestión comercial", "IA aplicada"]
-    },
-    {
       "name": "GE Lodasa",
       "url": "https://gelodasa.vercel.app",
       "urlLabel": "gelodasa.vercel.app",
       "desc": "Web corporativa para concesionario de vehículos en Galicia. Diseño moderno con animaciones, SEO estructurado y presencia digital completa para captación local.",
       "descPdf": "Web corporativa para concesionario en Galicia. Diseño moderno con animaciones, SEO y presencia digital completa para captación local.",
       "techs": ["Cliente real", "Web corporativa", "SEO"]
-    },
-    {
-      "name": "Mapa Provincias",
-      "tag": "Uso interno",
-      "desc": "Herramienta de gestión territorial para equipos de ventas o soporte. Asigna zonas geográficas por persona sobre un mapa interactivo de las 52 provincias, con datos de población y exportación a Excel.",
-      "descPdf": "Herramienta de gestión territorial con asignación de zonas sobre mapa interactivo de las 52 provincias, exportación a Excel.",
-      "techs": ["Herramienta interna", "Uso activo", "Excel"]
     },
     {
       "name": "OpoTrack",
