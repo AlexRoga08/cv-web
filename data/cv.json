@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "description": "Alejandro Rodríguez García — Estrategia de negocio, operaciones e IA aplicada"
+  },
+  "name": {
+    "first": "Alejandro",
+    "last": "Rodríguez García"
+  },
+  "tagline": {
+    "web": [
+      "Marketing, operaciones y estrategia de negocio.",
+      "Cinco años de experiencia. Con la ventaja de construir con IA."
+    ],
+    "pdf": "Marketing, operaciones y estrategia de negocio · Con la ventaja de construir con IA"
+  },
+  "contact": {
+    "email": "alexrog93@gmail.com",
+    "linkedinLabel": "linkedin.com/in/alexrog",
+    "linkedinUrl": "https://www.linkedin.com/in/alexrog",
+    "siteLabel": "aintegrax.com",
+    "location": "Ourense, España · Disponible para remoto o reubicación"
+  },
+  "hero": {
+    "availability": "Disponible para nuevas oportunidades",
+    "pills": [
+      "Marketing",
+      "Estrategia de negocio",
+      "Gestión operativa",
+      "Análisis de datos",
+      "IA aplicada"
+    ]
+  },
+  "projects": [
+    {
+      "name": "AIntegrax",
+      "url": "https://www.aintegrax.com",
+      "urlLabel": "aintegrax.com",
+      "desc": "Consultora de automatización e IA para pymes. Identifico oportunidades de mejora, diseño los flujos y entrego soluciones funcionando.",
+      "techs": ["Consultoría", "Automatización", "IA aplicada"]
+    },
+    {
+      "name": "Autorecomendador",
+      "tag": "Uso interno",
+      "desc": "Herramienta de asistencia para account executives. CRM integrado con el stock de venta que analiza el histórico de cada cliente y sugiere las mejores oportunidades para priorizar la gestión comercial.",
+      "descPdf": "CRM integrado con stock de venta que analiza el histórico de cada cliente y sugiere las mejores oportunidades para priorizar la gestión comercial.",
+      "techs": ["En producción", "Gestión comercial", "IA aplicada"]
+    },
+    {
+      "name": "GE Lodasa",
+      "url": "https://gelodasa.vercel.app",
+      "urlLabel": "gelodasa.vercel.app",
+      "desc": "Web corporativa para concesionario de vehículos en Galicia. Diseño moderno con animaciones, SEO estructurado y presencia digital completa para captación local.",
+      "descPdf": "Web corporativa para concesionario en Galicia. Diseño moderno con animaciones, SEO y presencia digital completa para captación local.",
+      "techs": ["Cliente real", "Web corporativa", "SEO"]
+    },
+    {
+      "name": "Mapa Provincias",
+      "tag": "Uso interno",
+      "desc": "Herramienta de gestión territorial para equipos de ventas o soporte. Asigna zonas geográficas por persona sobre un mapa interactivo de las 52 provincias, con datos de población y exportación a Excel.",
+      "descPdf": "Herramienta de gestión territorial con asignación de zonas sobre mapa interactivo de las 52 provincias, exportación a Excel.",
+      "techs": ["Herramienta interna", "Uso activo", "Excel"]
+    },
+    {
+      "name": "OpoTrack",
+      "url": "https://oposiciones-webapp.vercel.app",
+      "urlLabel": "oposiciones-webapp.vercel.app",
+      "desc": "App de seguimiento de oposiciones construida para una usuaria real. Registro de sesiones con preparador, notas por tema, objetivos diarios y mensajes motivadores.",
+      "descPdf": "App de seguimiento de oposiciones para usuaria real. Sesiones, notas por tema, objetivos diarios y mensajes motivadores.",
+      "techs": ["App real", "En uso activo", "Productividad"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Sales Executive — Remarketing Account Manager",
+      "dates": "nov. 2024 – Actualidad",
+      "company": "Enterprise Mobility · Galicia, Asturias y León",
+      "bullets": [
+        "Gestión de toda la región de Galicia: 70 clientes activos anuales y más de 800 unidades vendidas, en crecimiento sostenido.",
+        "Segmentación de cartera B2B y priorización según histórico de compra, potencial y tipología de cliente.",
+        "Construcción de herramientas propias con IA (n8n, Claude API) para automatizar análisis y priorización comercial."
+      ]
+    },
+    {
+      "role": "Branch Manager",
+      "dates": "mar. 2022 – nov. 2024",
+      "company": "Enterprise Mobility · Aeropuerto de Bilbao",
+      "bullets": [
+        "Dirección de oficina con equipo de más de 30 personas en el 5.º aeropuerto de España por volumen de tráfico.",
+        "Mejora del 12% en revenue de productos opcionales mediante análisis de comportamiento de compra y formación del equipo.",
+        "Satisfacción de cliente sostenida por encima del 85% de valoraciones máximas."
+      ]
+    },
+    {
+      "role": "Assistant Manager",
+      "dates": "ago. 2020 – mar. 2022",
+      "company": "Enterprise Mobility · Madrid",
+      "bullets": [
+        "Coordinación operativa de múltiples oficinas asegurando objetivos de servicio y rentabilidad.",
+        "Análisis de KPIs e identificación de mejoras operativas y comerciales."
+      ]
+    },
+    {
+      "role": "Sales Assistant",
+      "dates": "may. 2019 – ago. 2020",
+      "company": "Enterprise Mobility · Madrid",
+      "bullets": [
+        "Atención al cliente, gestión de contratos y venta de productos opcionales."
+      ]
+    },
+    {
+      "role": "Administrativo",
+      "dates": "jul. 2017 – abr. 2018",
+      "company": "Ferrovial Agroman · Valladolid",
+      "bullets": [
+        "Gestión contable, facturación, contratos y relaciones con proveedores."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Negocio &amp; Estrategia",
+      "badges": [
+        "Estrategia comercial",
+        "Gestión operativa",
+        "Liderazgo de equipos",
+        "Gestión B2B",
+        "Optimización de procesos"
+      ]
+    },
+    {
+      "title": "Marketing",
+      "badges": [
+        "Estrategia de marketing",
+        "Análisis de mercado",
+        "Planificación comercial",
+        "Comportamiento del consumidor",
+        "Estrategia de marca"
+      ]
+    },
+    {
+      "title": "Datos &amp; Reporting",
+      "badges": [
+        "Excel avanzado",
+        "Análisis de datos",
+        "KPIs y dashboards",
+        "Análisis de demanda",
+        "Segmentación de cartera"
+      ]
+    },
+    {
+      "title": "IA como herramienta",
+      "badges": [
+        "Construcción con IA",
+        "Automatización de flujos",
+        "n8n",
+        "Claude / ChatGPT API",
+        "No-code / Low-code"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "year": "2018 – 2019",
+      "degree": "Máster en Dirección de Marketing y Gestión Comercial",
+      "school": "EAE Business School",
+      "location": "Madrid, España",
+      "schoolPdf": "EAE Business School · Madrid"
+    },
+    {
+      "year": "2011 – 2017",
+      "degree": "Doble Grado: Administración de Empresas y Derecho",
+      "degreePdf": "Doble Grado: ADE y Derecho",
+      "school": "Universidad Carlos III de Madrid",
+      "location": "Madrid, España",
+      "schoolPdf": "Universidad Carlos III de Madrid"
+    },
+    {
+      "year": "2016 – 2017",
+      "degree": "International Business — Año de Intercambio",
+      "school": "University of South Carolina",
+      "location": "Columbia, EE.UU.",
+      "schoolPdf": "University of South Carolina · EE.UU."
+    }
+  ],
+  "certification": {
+    "label": "Certificación",
+    "name": "Marketing Digital de Google — Google Activate (2018)"
+  },
+  "languages": [
+    "Español — Lengua materna",
+    "Inglés — C1 Avanzado"
+  ],
+  "about": {
+    "paragraphs": [
+      "Soy un perfil de negocio: más de cinco años gestionando operaciones, equipos y clientes en entornos B2B exigentes. Me muevo bien en estrategia comercial, marketing y gestión operativa. Entiendo cómo funciona una organización desde dentro.",
+      "Lo que me diferencia es que también sé construir con IA. No como técnico, sino como alguien que identifica un problema, diseña la solución y la pone en marcha. He construido herramientas reales que están en producción y en uso activo."
+    ],
+    "highlight": "\"Perfil de negocio con la capacidad de construir con IA. No uno u otro — los dos.\"",
+    "extraBadges": [
+      "Disponible para reubicación"
+    ]
+  },
+  "contactSection": {
+    "sub": "Disponible para oportunidades en estrategia de negocio, operaciones e IA aplicada.",
+    "footer": "Ourense, España · Disponible para remoto o reubicación"
+  }
+}

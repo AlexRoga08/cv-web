@@ -1,0 +1,8 @@
+# Los generadores (scripts/) escriben siempre LF. Sin esto, core.autocrlf=true
+# dejaría CRLF en el working tree y cada build marcaría index.html como modificado.
+* text=auto eol=lf
+
+*.pdf binary
+*.jpg binary
+*.png binary
+*.ico binary

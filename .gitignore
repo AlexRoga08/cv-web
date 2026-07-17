@@ -2,10 +2,10 @@
 Thumbs.db
 node_modules/
 .superpowers/
+.claude/settings.local.json
 docs/
 .tmp/
 *.docx
-package.json
-package-lock.json
 recortada.jpg
 Alejandro_Rodríguez_García.pdf
+CV Alejandro .pdf

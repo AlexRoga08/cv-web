@@ -1,0 +1,16 @@
+{
+  "name": "cv-web",
+  "version": "1.0.0",
+  "description": "CV web de Alejandro Rodríguez García. Contenido en data/cv.json, sitio y PDF generados desde ahí.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "npm run build:site && npm run build:pdf",
+    "build:site": "node scripts/build-site.js",
+    "build:pdf": "node scripts/build-pdf.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.0.4"
+  },
+  "license": "UNLICENSED"
+}
