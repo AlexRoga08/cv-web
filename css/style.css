@@ -369,8 +369,12 @@ button { font-family: var(--font); cursor: pointer; }
 .project-card {
   grid-column: span 2;
 }
+/* Con 5 tarjetas, la 4.ª y la 5.ª se centran como pareja (cols 2-5). */
 .project-card:nth-child(4) { grid-column: 2 / span 2; }
 .project-card:nth-child(5) { grid-column: 4 / span 2; }
+/* Con 4, la 4.ª baja sola: la pareja se convierte en una tarjeta descolgada
+   a la izquierda, así que se recentra (cols 3-4). */
+.project-card:nth-child(4):last-child { grid-column: 3 / span 2; }
 
 .project-card {
   border: 1px solid var(--border);
@@ -698,7 +702,16 @@ button { font-family: var(--font); cursor: pointer; }
 
 /* Mobile (<768px) */
 @media (max-width: 767px) {
-  .section { padding: 72px 24px 32px; }
+  /* En una columna el contenido no cabe en 100vh: proyectos y experiencia se
+     recortaban contra overflow:hidden y no habia forma de llegar a ellos. En
+     movil la seccion crece con su contenido; scroll-snap sigue alineando al
+     inicio de cada una. */
+  .section {
+    padding: 72px 24px 32px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
   .nav { padding: 0 24px; }
   .nav-links { gap: 16px; }
   .nav-link:not(:last-child) { display: none; }

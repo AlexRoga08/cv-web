@@ -39,11 +39,19 @@
       "techs": ["Consultoría", "Automatización", "IA aplicada"]
     },
     {
-      "name": "GE Lodasa",
+      "name": "EligeFactura",
+      "url": "https://eligefactura.es",
+      "urlLabel": "eligefactura.es",
+      "desc": "Recomendador que analiza el caso de cada autónomo y le dice qué software de facturación necesita para cumplir con Verifactu. Oportunidad detectada en el cambio normativo y monetizada por afiliación.",
+      "descPdf": "Recomienda a cada autónomo qué software de facturación necesita para Verifactu. Oportunidad detectada en el cambio normativo y monetizada por afiliación.",
+      "techs": ["Proyecto propio", "SEO", "IA aplicada"]
+    },
+    {
+      "name": "Web para concesionario",
       "url": "https://gelodasa.vercel.app",
       "urlLabel": "gelodasa.vercel.app",
-      "desc": "Web corporativa para concesionario de vehículos en Galicia. Diseño moderno con animaciones, SEO estructurado y presencia digital completa para captación local.",
-      "descPdf": "Web corporativa para concesionario en Galicia. Diseño moderno con animaciones, SEO y presencia digital completa para captación local.",
+      "desc": "Encargo para un concesionario de vehículos en Galicia. Diseño moderno con animaciones, SEO estructurado y presencia digital completa para captación local.",
+      "descPdf": "Encargo para un concesionario en Galicia. Diseño moderno con animaciones, SEO y presencia digital completa para captación local.",
       "techs": ["Cliente real", "Web corporativa", "SEO"]
     },
     {
