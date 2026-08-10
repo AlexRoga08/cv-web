@@ -5,9 +5,9 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "build": "npm run build:site && npm run build:pdf",
-    "build:site": "node scripts/build-site.js",
-    "build:pdf": "node scripts/build-pdf.js"
+    "generate": "npm run generate:site && npm run generate:pdf",
+    "generate:site": "node scripts/build-site.js",
+    "generate:pdf": "node scripts/build-pdf.js"
   },
   "devDependencies": {
     "puppeteer": "^25.0.4"
