@@ -123,11 +123,63 @@ button { font-family: var(--font); cursor: pointer; }
 }
 .nav-logo-first { color: var(--text); }
 .nav-logo-last  { color: var(--navy); }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
 }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Language switch */
+.nav-lang {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.nav-lang-btn {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 5px 9px;
+  color: var(--muted);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-lang-btn:hover { color: var(--navy); }
+.nav-lang-btn.is-active {
+  background: var(--accent-bg);
+  color: var(--navy);
+}
+
+/* Always-visible CV download */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+.nav-cta:hover { background: #16415f; }
+.nav-cta:active { transform: scale(0.98); }
+.nav-cta svg { flex-shrink: 0; }
+.nav-cta-short { display: none; }
 .nav-link {
   font-size: 11px;
   font-weight: 600;
@@ -690,6 +742,8 @@ button { font-family: var(--font); cursor: pointer; }
 @media (max-width: 1024px) {
   .section { padding: 80px 48px 40px; }
   .nav { padding: 0 48px; }
+  .nav-right { gap: 22px; }
+  .nav-links { gap: 24px; }
   .hero-name { font-size: 38px; }
   .hero-photo { width: 150px; height: 150px; }
   .hero-content { gap: 40px; }
@@ -713,8 +767,11 @@ button { font-family: var(--font); cursor: pointer; }
     overflow: visible;
   }
   .nav { padding: 0 24px; }
+  .nav-right { gap: 12px; }
   .nav-links { gap: 16px; }
   .nav-link:not(:last-child) { display: none; }
+  /* El CTA se queda siempre visible; solo se aprieta. */
+  .nav-cta { padding: 7px 12px; gap: 6px; }
 
   /* Hero: stack vertically */
   .hero-content {
@@ -749,4 +806,12 @@ button { font-family: var(--font); cursor: pointer; }
   /* Sobre mí */
   .sobre-text { font-size: 14px; }
   .sobre-highlight { font-size: 15px; }
+}
+
+/* Small phones (<375px): the full CTA label crowds the Contacto link,
+   so it falls back to the icon + "CV". Measured: 375px leaves 26px of
+   clearance, 320px leaves none. */
+@media (max-width: 374px) {
+  .nav-cta-full { display: none; }
+  .nav-cta-short { display: inline; }
 }

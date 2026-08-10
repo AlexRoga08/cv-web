@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const cv = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cv.json'), 'utf8'));
+const read = (file) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', file), 'utf8'));
 
 const photoDataUrl = `data:image/jpeg;base64,${fs
   .readFileSync(path.join(ROOT, 'assets', 'foto.jpg'))
@@ -41,15 +41,17 @@ const projectItem = (p) => `        <div class="project-item">
           <div class="project-desc">${p.descPdf || p.desc}</div>
         </div>`;
 
-const contactItems = [
-  cv.contact.email,
-  cv.contact.linkedinLabel,
-  cv.contact.siteLabel,
-  cv.contact.location,
-];
+const buildHtml = (cv) => {
+  const t = cv.ui.pdf;
+  const contactItems = [
+    cv.contact.email,
+    cv.contact.linkedinLabel,
+    cv.contact.siteLabel,
+    cv.contact.location,
+  ];
 
-const html = `<!DOCTYPE html>
-<html lang="es">
+  return `<!DOCTYPE html>
+<html lang="${cv.locale.lang}">
 <head>
 <meta charset="UTF-8">
 <style>
@@ -222,19 +224,19 @@ ${contactItems.map((c) => `        <span class="contact-item">${c}</span>`).join
     <!-- Left column -->
     <div>
       <div class="section">
-        <div class="section-title">Skills</div>
+        <div class="section-title">${t.skills}</div>
 
 ${cv.skills.map(skillGroup).join('\n\n')}
       </div>
 
       <div class="section">
-        <div class="section-title">Formación</div>
+        <div class="section-title">${t.education}</div>
 
 ${cv.education.map(eduItem).join('\n\n')}
       </div>
 
       <div class="section">
-        <div class="section-title">Idiomas</div>
+        <div class="section-title">${t.languages}</div>
 ${cv.languages.map((l) => `        <div class="lang-item">${l}</div>`).join('\n')}
       </div>
 
@@ -244,13 +246,13 @@ ${cv.languages.map((l) => `        <div class="lang-item">${l}</div>`).join('\n'
     <!-- Right column -->
     <div>
       <div class="section">
-        <div class="section-title">Experiencia</div>
+        <div class="section-title">${t.experience}</div>
 
 ${cv.experience.map(timelineItem).join('\n\n')}
       </div>
 
       <div class="section">
-        <div class="section-title">Proyectos propios</div>
+        <div class="section-title">${t.projects}</div>
 
 ${cv.projects.map(projectItem).join('\n\n')}
       </div>
@@ -259,29 +261,39 @@ ${cv.projects.map(projectItem).join('\n\n')}
   </div>
 </body>
 </html>`;
+};
 
-module.exports = { html };
+const TARGETS = [
+  { data: 'cv.json', out: 'cv.pdf' },
+  { data: 'cv.en.json', out: 'cv-en.pdf' },
+];
+
+module.exports = { buildHtml, read };
 
 if (require.main === module) {
   (async () => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-    const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: 'networkidle0' });
-    await page.pdf({
-      path: path.join(ROOT, 'assets', 'cv.pdf'),
-      format: 'A4',
-      printBackground: true,
-      margin: { top: '0', right: '0', bottom: '0', left: '0' },
-    });
 
-    const pages = await page.evaluate(
-      () => Math.ceil(document.documentElement.scrollHeight / ((297 * 96) / 25.4))
-    );
-    await browser.close();
+    for (const target of TARGETS) {
+      const page = await browser.newPage();
+      await page.setContent(buildHtml(read(target.data)), { waitUntil: 'networkidle0' });
+      await page.pdf({
+        path: path.join(ROOT, 'assets', target.out),
+        format: 'A4',
+        printBackground: true,
+        margin: { top: '0', right: '0', bottom: '0', left: '0' },
+      });
 
-    if (pages > 1) {
-      console.warn(`AVISO: el contenido ocupa ~${pages} páginas. El CV debe caber en una.`);
+      const pages = await page.evaluate(
+        () => Math.ceil(document.documentElement.scrollHeight / ((297 * 96) / 25.4))
+      );
+      if (pages > 1) {
+        console.warn(`AVISO: ${target.out} ocupa ~${pages} páginas. El CV debe caber en una.`);
+      }
+      console.log(`PDF generado: assets/${target.out}`);
+      await page.close();
     }
-    console.log('PDF generado: assets/cv.pdf');
+
+    await browser.close();
   })();
 }

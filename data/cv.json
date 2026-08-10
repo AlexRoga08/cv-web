@@ -1,4 +1,54 @@
 {
+  "locale": {
+    "lang": "es",
+    "home": "/",
+    "pdf": "/assets/cv.pdf",
+    "pdfDownloadName": "CV_Alejandro_Rodriguez.pdf"
+  },
+  "ui": {
+    "nav": {
+      "projects": "Proyectos",
+      "experience": "Experiencia",
+      "skills": "Skills",
+      "contact": "Contacto",
+      "download": "Descargar CV",
+      "downloadShort": "CV",
+      "downloadAria": "Descargar CV en PDF",
+      "langAria": "Idioma",
+      "dotsAria": "Navegación de secciones"
+    },
+    "dots": [
+      "Inicio",
+      "Proyectos",
+      "Experiencia",
+      "Skills",
+      "Formación",
+      "Sobre mí",
+      "Contacto"
+    ],
+    "hero": {
+      "viewProjects": "Ver proyectos",
+      "download": "Descargar CV",
+      "scroll": "SCROLL",
+      "photoAlt": "foto de perfil"
+    },
+    "sections": {
+      "projects": { "label": "Proyectos propios", "title": "Lo que he construido" },
+      "experience": { "label": "Trayectoria", "title": "Experiencia laboral" },
+      "skills": { "label": "Herramientas y competencias", "title": "Skills" },
+      "education": { "label": "Estudios", "title": "Formación" },
+      "about": { "label": "En resumen", "title": "Sobre mí" },
+      "contact": { "label": "¿Hablamos?", "title": "Hablemos." }
+    },
+    "contact": { "downloadFull": "Descargar CV completo" },
+    "pdf": {
+      "skills": "Skills",
+      "education": "Formación",
+      "languages": "Idiomas",
+      "experience": "Experiencia",
+      "projects": "Proyectos propios"
+    }
+  },
   "meta": {
     "description": "Alejandro Rodríguez García — Estrategia de negocio, operaciones e IA aplicada"
   },

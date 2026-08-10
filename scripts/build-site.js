@@ -2,13 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const cv = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cv.json'), 'utf8'));
+const read = (file) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', file), 'utf8'));
 
 const badges = (items, indent, cls) =>
   items.map((b) => `${indent}<span class="${cls}">${b}</span>`).join('\n');
 
 const externalIcon = (indent) => `${indent}<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
 ${indent}  <path d="M2 10L10 2M5 2h5v5"/>
+${indent}</svg>`;
+
+const downloadIcon = (size, indent) => `${indent}<svg width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+${indent}  <path d="M8 2v8M5 7l3 3 3-3M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2"/>
 ${indent}</svg>`;
 
 const projectCard = (p) => {
@@ -59,10 +63,26 @@ const eduItem = (e) => `          <div class="edu-item animate-item">
             <div class="edu-location">${e.location}</div>
           </div>`;
 
-const aboutBadges = [...cv.languages, ...cv.about.extraBadges];
+const langSwitch = (cv, other) => {
+  const link = (loc, label, active) =>
+    `          <a href="${loc.home}" class="nav-lang-btn${active ? ' is-active' : ''}"${
+      active ? ' aria-current="page"' : ''
+    } hreflang="${loc.lang}">${label}</a>`;
+  const [es, en] =
+    cv.locale.lang === 'es' ? [cv.locale, other.locale] : [other.locale, cv.locale];
+  return `        <div class="nav-lang" role="group" aria-label="${cv.ui.nav.langAria}">
+${link(es, 'ES', cv.locale.lang === 'es')}
+${link(en, 'EN', cv.locale.lang === 'en')}
+        </div>`;
+};
 
-const html = `<!DOCTYPE html>
-<html lang="es">
+const render = (cv, other) => {
+  const ui = cv.ui;
+  const s = ui.sections;
+  const aboutBadges = [...cv.languages, ...cv.about.extraBadges];
+
+  return `<!DOCTYPE html>
+<html lang="${cv.locale.lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,31 +91,40 @@ const html = `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
   <!-- Top navigation -->
   <nav class="nav" id="nav">
     <div class="nav-logo"><span class="nav-logo-first">A</span><span class="nav-logo-last">RG</span></div>
-    <div class="nav-links">
-      <a href="#proyectos" class="nav-link">Proyectos</a>
-      <a href="#experiencia" class="nav-link">Experiencia</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#contacto" class="nav-link">Contacto</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#proyectos" class="nav-link">${ui.nav.projects}</a>
+        <a href="#experiencia" class="nav-link">${ui.nav.experience}</a>
+        <a href="#skills" class="nav-link">${ui.nav.skills}</a>
+        <a href="#contacto" class="nav-link">${ui.nav.contact}</a>
+      </div>
+      <div class="nav-actions">
+${langSwitch(cv, other)}
+        <a class="nav-cta" href="${cv.locale.pdf}" download="${cv.locale.pdfDownloadName}" aria-label="${ui.nav.downloadAria}">
+${downloadIcon(13, '          ')}
+          <span class="nav-cta-full">${ui.nav.download}</span>
+          <span class="nav-cta-short">${ui.nav.downloadShort}</span>
+        </a>
+      </div>
     </div>
   </nav>
 
   <!-- Dot navigation (right side) -->
-  <div class="dots-nav" id="dotsNav" aria-label="Navegación de secciones">
-    <button class="dot active" data-index="0" aria-label="Inicio"></button>
-    <button class="dot" data-index="1" aria-label="Proyectos"></button>
-    <button class="dot" data-index="2" aria-label="Experiencia"></button>
-    <button class="dot" data-index="3" aria-label="Skills"></button>
-    <button class="dot" data-index="4" aria-label="Formación"></button>
-    <button class="dot" data-index="5" aria-label="Sobre mí"></button>
-    <button class="dot" data-index="6" aria-label="Contacto"></button>
+  <div class="dots-nav" id="dotsNav" aria-label="${ui.nav.dotsAria}">
+${ui.dots
+  .map(
+    (label, i) =>
+      `    <button class="dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="${label}"></button>`
+  )
+  .join('\n')}
   </div>
 
   <!-- Sections container -->
@@ -120,23 +149,21 @@ const html = `<!DOCTYPE html>
 ${badges(cv.hero.pills, '            ', 'pill')}
           </div>
           <div class="hero-ctas animate-item">
-            <button class="btn-primary" onclick="scrollToSection(1)">Ver proyectos</button>
-            <a class="btn-secondary" href="assets/cv.pdf" download="CV_Alejandro_Rodriguez.pdf">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 2v8M5 7l3 3 3-3M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2"/>
-              </svg>
-              Descargar CV
+            <button class="btn-primary" onclick="scrollToSection(1)">${ui.hero.viewProjects}</button>
+            <a class="btn-secondary" href="${cv.locale.pdf}" download="${cv.locale.pdfDownloadName}">
+${downloadIcon(14, '              ')}
+              ${ui.hero.download}
             </a>
           </div>
         </div>
 
         <div class="hero-photo animate-item">
-          <img src="assets/foto.jpg" alt="${cv.name.first} ${cv.name.last} — foto de perfil">
+          <img src="/assets/foto.jpg" alt="${cv.name.first} ${cv.name.last} — ${ui.hero.photoAlt}">
         </div>
       </div>
 
       <div class="scroll-hint" aria-hidden="true">
-        <span>SCROLL</span>
+        <span>${ui.hero.scroll}</span>
         <div class="scroll-arrow"></div>
       </div>
     </section>
@@ -145,8 +172,8 @@ ${badges(cv.hero.pills, '            ', 'pill')}
       <div class="section-num">02</div>
       <div class="section-inner">
         <div class="section-header animate-item">
-          <div class="section-label">Proyectos propios</div>
-          <h2 class="section-title">Lo que he construido</h2>
+          <div class="section-label">${s.projects.label}</div>
+          <h2 class="section-title">${s.projects.title}</h2>
         </div>
         <div class="projects-grid">
 
@@ -160,8 +187,8 @@ ${cv.projects.map(projectCard).join('\n\n')}
       <div class="section-num">03</div>
       <div class="section-inner">
         <div class="section-header animate-item">
-          <div class="section-label">Trayectoria</div>
-          <h2 class="section-title">Experiencia laboral</h2>
+          <div class="section-label">${s.experience.label}</div>
+          <h2 class="section-title">${s.experience.title}</h2>
         </div>
         <div class="timeline">
 
@@ -175,8 +202,8 @@ ${cv.experience.map(timelineItem).join('\n\n')}
       <div class="section-num">04</div>
       <div class="section-inner">
         <div class="section-header animate-item">
-          <div class="section-label">Herramientas y competencias</div>
-          <h2 class="section-title">Skills</h2>
+          <div class="section-label">${s.skills.label}</div>
+          <h2 class="section-title">${s.skills.title}</h2>
         </div>
         <div class="skills-grid">
 
@@ -190,8 +217,8 @@ ${cv.skills.map(skillGroup).join('\n\n')}
       <div class="section-num">05</div>
       <div class="section-inner">
         <div class="section-header animate-item">
-          <div class="section-label">Estudios</div>
-          <h2 class="section-title">Formación</h2>
+          <div class="section-label">${s.education.label}</div>
+          <h2 class="section-title">${s.education.title}</h2>
         </div>
         <div class="education-grid">
 
@@ -210,8 +237,8 @@ ${cv.education.map(eduItem).join('\n\n')}
       <div class="section-num">06</div>
       <div class="section-inner sobre-inner">
         <div class="section-header animate-item">
-          <div class="section-label">En resumen</div>
-          <h2 class="section-title">Sobre mí</h2>
+          <div class="section-label">${s.about.label}</div>
+          <h2 class="section-title">${s.about.title}</h2>
         </div>
         <div class="sobre-content">
 ${cv.about.paragraphs
@@ -231,8 +258,8 @@ ${badges(aboutBadges, '            ', 'skill-badge')}
       <div class="section-num">07</div>
       <div class="section-inner contacto-inner">
         <div class="section-header animate-item">
-          <div class="section-label">¿Hablamos?</div>
-          <h2 class="section-title">Hablemos.</h2>
+          <div class="section-label">${s.contact.label}</div>
+          <h2 class="section-title">${s.contact.title}</h2>
         </div>
         <p class="contacto-sub animate-item">
           ${cv.contactSection.sub}
@@ -257,11 +284,9 @@ ${badges(aboutBadges, '            ', 'skill-badge')}
             ${cv.contact.linkedinLabel}
           </a>
         </div>
-        <a class="btn-primary animate-item" href="assets/cv.pdf" download="CV_Alejandro_Rodriguez.pdf" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 2v8M5 7l3 3 3-3M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2"/>
-          </svg>
-          Descargar CV completo
+        <a class="btn-primary animate-item" href="${cv.locale.pdf}" download="${cv.locale.pdfDownloadName}" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;">
+${downloadIcon(15, '          ')}
+          ${ui.contact.downloadFull}
         </a>
         <p class="contacto-footer animate-item">${cv.contactSection.footer}</p>
       </div>
@@ -269,10 +294,18 @@ ${badges(aboutBadges, '            ', 'skill-badge')}
 
   </main>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
 `;
+};
 
-fs.writeFileSync(path.join(ROOT, 'index.html'), html, 'utf8');
+const es = read('cv.json');
+const en = read('cv.en.json');
+
+fs.writeFileSync(path.join(ROOT, 'index.html'), render(es, en), 'utf8');
 console.log('Sitio generado: index.html');
+
+fs.mkdirSync(path.join(ROOT, 'en'), { recursive: true });
+fs.writeFileSync(path.join(ROOT, 'en', 'index.html'), render(en, es), 'utf8');
+console.log('Sitio generado: en/index.html');

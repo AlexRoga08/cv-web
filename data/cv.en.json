@@ -1,0 +1,251 @@
+{
+  "locale": {
+    "lang": "en",
+    "home": "/en",
+    "pdf": "/assets/cv-en.pdf",
+    "pdfDownloadName": "CV_Alejandro_Rodriguez_EN.pdf"
+  },
+  "ui": {
+    "nav": {
+      "projects": "Projects",
+      "experience": "Experience",
+      "skills": "Skills",
+      "contact": "Contact",
+      "download": "Download CV",
+      "downloadShort": "CV",
+      "downloadAria": "Download CV as PDF",
+      "langAria": "Language",
+      "dotsAria": "Section navigation"
+    },
+    "dots": [
+      "Home",
+      "Projects",
+      "Experience",
+      "Skills",
+      "Education",
+      "About",
+      "Contact"
+    ],
+    "hero": {
+      "viewProjects": "View projects",
+      "download": "Download CV",
+      "scroll": "SCROLL",
+      "photoAlt": "profile photo"
+    },
+    "sections": {
+      "projects": { "label": "Own projects", "title": "What I've built" },
+      "experience": { "label": "Career", "title": "Work experience" },
+      "skills": { "label": "Tools and skills", "title": "Skills" },
+      "education": { "label": "Studies", "title": "Education" },
+      "about": { "label": "In short", "title": "About me" },
+      "contact": { "label": "Get in touch", "title": "Let's talk." }
+    },
+    "contact": { "downloadFull": "Download full CV" },
+    "pdf": {
+      "skills": "Skills",
+      "education": "Education",
+      "languages": "Languages",
+      "experience": "Experience",
+      "projects": "Personal projects"
+    }
+  },
+  "meta": {
+    "description": "Alejandro Rodríguez García — Business strategy, operations and applied AI"
+  },
+  "name": {
+    "first": "Alejandro",
+    "last": "Rodríguez García"
+  },
+  "tagline": {
+    "web": [
+      "Marketing, operations and business strategy.",
+      "Five years of experience. With the edge of building with AI."
+    ],
+    "pdf": "Marketing, operations and business strategy · With the edge of building with AI"
+  },
+  "contact": {
+    "email": "alejandro.roga08@gmail.com",
+    "linkedinLabel": "linkedin.com/in/alexrog",
+    "linkedinUrl": "https://www.linkedin.com/in/alexrog",
+    "siteLabel": "aintegrax.com",
+    "location": "Ourense, Spain · Open to remote or relocation"
+  },
+  "hero": {
+    "availability": "Open to new opportunities",
+    "pills": [
+      "Marketing",
+      "Business strategy",
+      "Operations management",
+      "Data analysis",
+      "Applied AI"
+    ]
+  },
+  "projects": [
+    {
+      "name": "AIntegrax",
+      "url": "https://www.aintegrax.com",
+      "urlLabel": "aintegrax.com",
+      "desc": "Automation and AI consultancy for small and mid-sized companies. I find the opportunities, design the workflows and deliver solutions that work.",
+      "techs": ["Consulting", "Automation", "Applied AI"]
+    },
+    {
+      "name": "EligeFactura",
+      "url": "https://eligefactura.es",
+      "urlLabel": "eligefactura.es",
+      "desc": "Recommender that reads each freelancer's case and tells them which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and turned into affiliate revenue.",
+      "descPdf": "Tells each freelancer which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and turned into affiliate revenue.",
+      "techs": ["Own project", "SEO", "Applied AI"]
+    },
+    {
+      "name": "Car dealership website",
+      "url": "https://gelodasa.vercel.app",
+      "urlLabel": "gelodasa.vercel.app",
+      "desc": "Commissioned by a car dealership in Galicia. Modern design with animations, structured SEO and a complete digital presence for local lead generation.",
+      "descPdf": "Commissioned by a car dealership in Galicia. Modern design with animations, SEO and a complete digital presence for local lead generation.",
+      "techs": ["Real client", "Corporate website", "SEO"]
+    },
+    {
+      "name": "OpoTrack",
+      "url": "https://oposiciones-webapp.vercel.app",
+      "urlLabel": "oposiciones-webapp.vercel.app",
+      "desc": "Study-tracking app for Spanish civil service exams, built for a real user. Session logging with her tutor, notes per topic, daily goals and motivational messages.",
+      "descPdf": "Study-tracking app for civil service exams, built for a real user. Sessions, notes per topic, daily goals and motivational messages.",
+      "techs": ["Real app", "In active use", "Productivity"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Sales Executive — Remarketing Account Manager",
+      "dates": "Nov 2024 – Present",
+      "company": "Enterprise Mobility · Galicia, Asturias and León",
+      "bullets": [
+        "Full ownership of the Galicia region: 70 active accounts per year and over 800 units sold, growing steadily.",
+        "B2B portfolio segmentation, ranking accounts by purchase history, potential and account type.",
+        "Built my own AI tooling (n8n, Claude API) to automate sales analysis and account prioritisation."
+      ]
+    },
+    {
+      "role": "Branch Manager",
+      "dates": "Mar 2022 – Nov 2024",
+      "company": "Enterprise Mobility · Bilbao Airport",
+      "bullets": [
+        "Ran a branch with a team of over 30 people at Spain's 5th busiest airport by traffic volume.",
+        "12% increase in ancillary product revenue through purchase-behaviour analysis and team coaching.",
+        "Customer satisfaction sustained above 85% top-box ratings."
+      ]
+    },
+    {
+      "role": "Assistant Manager",
+      "dates": "Aug 2020 – Mar 2022",
+      "company": "Enterprise Mobility · Madrid",
+      "bullets": [
+        "Operational coordination across multiple branches, meeting service and profitability targets.",
+        "KPI analysis and identification of operational and commercial improvements."
+      ]
+    },
+    {
+      "role": "Sales Assistant",
+      "dates": "May 2019 – Aug 2020",
+      "company": "Enterprise Mobility · Madrid",
+      "bullets": [
+        "Customer service, contract management and ancillary product sales."
+      ]
+    },
+    {
+      "role": "Administrative Assistant",
+      "dates": "Jul 2017 – Apr 2018",
+      "company": "Ferrovial Agroman · Valladolid",
+      "bullets": [
+        "Bookkeeping, invoicing, contracts and supplier relations."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Business &amp; Strategy",
+      "badges": [
+        "Sales strategy",
+        "Operations management",
+        "Team leadership",
+        "B2B account management",
+        "Process improvement"
+      ]
+    },
+    {
+      "title": "Marketing",
+      "badges": [
+        "Marketing strategy",
+        "Market analysis",
+        "Sales planning",
+        "Consumer behaviour",
+        "Brand strategy"
+      ]
+    },
+    {
+      "title": "Data &amp; Reporting",
+      "badges": [
+        "Advanced Excel",
+        "Data analysis",
+        "KPIs and dashboards",
+        "Demand analysis",
+        "Portfolio segmentation"
+      ]
+    },
+    {
+      "title": "AI as a tool",
+      "badges": [
+        "Building with AI",
+        "Workflow automation",
+        "n8n",
+        "Claude / ChatGPT API",
+        "No-code / Low-code"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "year": "2018 – 2019",
+      "degree": "Master's in Marketing Management and Sales",
+      "school": "EAE Business School",
+      "location": "Madrid, Spain",
+      "schoolPdf": "EAE Business School · Madrid"
+    },
+    {
+      "year": "2011 – 2017",
+      "degree": "Dual Degree: Business Administration and Law",
+      "degreePdf": "Dual Degree: Business Admin. and Law",
+      "school": "Universidad Carlos III de Madrid",
+      "location": "Madrid, Spain",
+      "schoolPdf": "Universidad Carlos III de Madrid"
+    },
+    {
+      "year": "2016 – 2017",
+      "degree": "International Business — Exchange Year",
+      "school": "University of South Carolina",
+      "location": "Columbia, USA",
+      "schoolPdf": "University of South Carolina · USA"
+    }
+  ],
+  "certification": {
+    "label": "Certification",
+    "name": "Google Digital Marketing — Google Activate (2018)"
+  },
+  "languages": [
+    "Spanish — Native",
+    "English — C1 Advanced"
+  ],
+  "about": {
+    "paragraphs": [
+      "I'm a business profile: over five years running operations, teams and clients in demanding B2B environments. I'm comfortable in sales strategy, marketing and operations management. I understand how a company works from the inside.",
+      "What sets me apart is that I can also build with AI. Not as an engineer, but as someone who spots a problem, designs the solution and ships it. I've built real tools that are in production and in active use."
+    ],
+    "highlight": "\"A business profile with the ability to build with AI. Not one or the other — both.\"",
+    "extraBadges": [
+      "Open to relocation"
+    ]
+  },
+  "contactSection": {
+    "sub": "Open to opportunities in business strategy, operations and applied AI.",
+    "footer": "Ourense, Spain · Open to remote or relocation"
+  }
+}
