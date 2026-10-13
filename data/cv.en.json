@@ -33,14 +33,34 @@
       "photoAlt": "profile photo"
     },
     "sections": {
-      "projects": { "label": "Own projects", "title": "What I've built" },
-      "experience": { "label": "Career", "title": "Work experience" },
-      "skills": { "label": "Tools and skills", "title": "Skills" },
-      "education": { "label": "Studies", "title": "Education" },
-      "about": { "label": "In short", "title": "About me" },
-      "contact": { "label": "Get in touch", "title": "Let's talk." }
+      "projects": {
+        "label": "Own projects",
+        "title": "What I've built"
+      },
+      "experience": {
+        "label": "Career",
+        "title": "Work experience"
+      },
+      "skills": {
+        "label": "Tools and skills",
+        "title": "Skills"
+      },
+      "education": {
+        "label": "Studies",
+        "title": "Education"
+      },
+      "about": {
+        "label": "In short",
+        "title": "About me"
+      },
+      "contact": {
+        "label": "Get in touch",
+        "title": "Let's talk."
+      }
     },
-    "contact": { "downloadFull": "Download full CV" },
+    "contact": {
+      "downloadFull": "Download full CV"
+    },
     "pdf": {
       "skills": "Skills",
       "education": "Education",
@@ -86,7 +106,11 @@
       "url": "https://www.aintegrax.com",
       "urlLabel": "aintegrax.com",
       "desc": "Automation and AI consultancy for small and mid-sized companies. I find the opportunities, design the workflows and deliver solutions that work.",
-      "techs": ["Consulting", "Automation", "Applied AI"]
+      "techs": [
+        "Consulting",
+        "Automation",
+        "Applied AI"
+      ]
     },
     {
       "name": "EligeFactura",
@@ -94,7 +118,11 @@
       "urlLabel": "eligefactura.es",
       "desc": "Recommender that reads each freelancer's case and tells them which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and turned into affiliate revenue.",
       "descPdf": "Tells each freelancer which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and turned into affiliate revenue.",
-      "techs": ["Own project", "SEO", "Applied AI"]
+      "techs": [
+        "Own project",
+        "SEO",
+        "Applied AI"
+      ]
     },
     {
       "name": "Car dealership website",
@@ -102,7 +130,11 @@
       "urlLabel": "gelodasa.vercel.app",
       "desc": "Commissioned by a car dealership in Galicia. Modern design with animations, structured SEO and a complete digital presence for local lead generation.",
       "descPdf": "Commissioned by a car dealership in Galicia. Modern design with animations, SEO and a complete digital presence for local lead generation.",
-      "techs": ["Real client", "Corporate website", "SEO"]
+      "techs": [
+        "Real client",
+        "Corporate website",
+        "SEO"
+      ]
     },
     {
       "name": "OpoTrack",
@@ -110,7 +142,11 @@
       "urlLabel": "oposiciones-webapp.vercel.app",
       "desc": "Study-tracking app for Spanish civil service exams, built for a real user. Session logging with her tutor, notes per topic, daily goals and motivational messages.",
       "descPdf": "Study-tracking app for civil service exams, built for a real user. Sessions, notes per topic, daily goals and motivational messages.",
-      "techs": ["Real app", "In active use", "Productivity"]
+      "techs": [
+        "Real app",
+        "In active use",
+        "Productivity"
+      ]
     }
   ],
   "experience": [
@@ -221,9 +257,9 @@
     {
       "year": "2016 – 2017",
       "degree": "International Business — Exchange Year",
-      "school": "University of South Carolina",
+      "school": "Darla Moore School of Business — University of South Carolina",
       "location": "Columbia, USA",
-      "schoolPdf": "University of South Carolina · USA"
+      "schoolPdf": "Darla Moore School of Business · University of South Carolina, USA"
     }
   ],
   "certification": {

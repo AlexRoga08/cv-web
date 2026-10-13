@@ -33,14 +33,34 @@
       "photoAlt": "foto de perfil"
     },
     "sections": {
-      "projects": { "label": "Proyectos propios", "title": "Lo que he construido" },
-      "experience": { "label": "Trayectoria", "title": "Experiencia laboral" },
-      "skills": { "label": "Herramientas y competencias", "title": "Skills" },
-      "education": { "label": "Estudios", "title": "Formación" },
-      "about": { "label": "En resumen", "title": "Sobre mí" },
-      "contact": { "label": "¿Hablamos?", "title": "Hablemos." }
+      "projects": {
+        "label": "Proyectos propios",
+        "title": "Lo que he construido"
+      },
+      "experience": {
+        "label": "Trayectoria",
+        "title": "Experiencia laboral"
+      },
+      "skills": {
+        "label": "Herramientas y competencias",
+        "title": "Skills"
+      },
+      "education": {
+        "label": "Estudios",
+        "title": "Formación"
+      },
+      "about": {
+        "label": "En resumen",
+        "title": "Sobre mí"
+      },
+      "contact": {
+        "label": "¿Hablamos?",
+        "title": "Hablemos."
+      }
     },
-    "contact": { "downloadFull": "Descargar CV completo" },
+    "contact": {
+      "downloadFull": "Descargar CV completo"
+    },
     "pdf": {
       "skills": "Skills",
       "education": "Formación",
@@ -86,7 +106,11 @@
       "url": "https://www.aintegrax.com",
       "urlLabel": "aintegrax.com",
       "desc": "Consultora de automatización e IA para pymes. Identifico oportunidades de mejora, diseño los flujos y entrego soluciones funcionando.",
-      "techs": ["Consultoría", "Automatización", "IA aplicada"]
+      "techs": [
+        "Consultoría",
+        "Automatización",
+        "IA aplicada"
+      ]
     },
     {
       "name": "EligeFactura",
@@ -94,7 +118,11 @@
       "urlLabel": "eligefactura.es",
       "desc": "Recomendador que analiza el caso de cada autónomo y le dice qué software de facturación necesita para cumplir con Verifactu. Oportunidad detectada en el cambio normativo y monetizada por afiliación.",
       "descPdf": "Recomienda a cada autónomo qué software de facturación necesita para Verifactu. Oportunidad detectada en el cambio normativo y monetizada por afiliación.",
-      "techs": ["Proyecto propio", "SEO", "IA aplicada"]
+      "techs": [
+        "Proyecto propio",
+        "SEO",
+        "IA aplicada"
+      ]
     },
     {
       "name": "Web para concesionario",
@@ -102,7 +130,11 @@
       "urlLabel": "gelodasa.vercel.app",
       "desc": "Encargo para un concesionario de vehículos en Galicia. Diseño moderno con animaciones, SEO estructurado y presencia digital completa para captación local.",
       "descPdf": "Encargo para un concesionario en Galicia. Diseño moderno con animaciones, SEO y presencia digital completa para captación local.",
-      "techs": ["Cliente real", "Web corporativa", "SEO"]
+      "techs": [
+        "Cliente real",
+        "Web corporativa",
+        "SEO"
+      ]
     },
     {
       "name": "OpoTrack",
@@ -110,7 +142,11 @@
       "urlLabel": "oposiciones-webapp.vercel.app",
       "desc": "App de seguimiento de oposiciones construida para una usuaria real. Registro de sesiones con preparador, notas por tema, objetivos diarios y mensajes motivadores.",
       "descPdf": "App de seguimiento de oposiciones para usuaria real. Sesiones, notas por tema, objetivos diarios y mensajes motivadores.",
-      "techs": ["App real", "En uso activo", "Productividad"]
+      "techs": [
+        "App real",
+        "En uso activo",
+        "Productividad"
+      ]
     }
   ],
   "experience": [
@@ -221,9 +257,9 @@
     {
       "year": "2016 – 2017",
       "degree": "International Business — Año de Intercambio",
-      "school": "University of South Carolina",
+      "school": "Darla Moore School of Business — University of South Carolina",
       "location": "Columbia, EE.UU.",
-      "schoolPdf": "University of South Carolina · EE.UU."
+      "schoolPdf": "Darla Moore School of Business · University of South Carolina, EE.UU."
     }
   ],
   "certification": {
