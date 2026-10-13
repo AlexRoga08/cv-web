@@ -5,6 +5,7 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
+    "test": "node --test",
     "generate": "npm run generate:site && npm run generate:pdf",
     "generate:site": "node scripts/build-site.js",
     "generate:pdf": "node scripts/build-pdf.js"

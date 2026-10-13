@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const { resolveTargets } = require('./lib/targets');
+const { readJson } = require('./lib/read-json');
 
 const ROOT = path.join(__dirname, '..');
 const read = (file) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', file), 'utf8'));
@@ -263,22 +265,20 @@ ${cv.projects.map(projectItem).join('\n\n')}
 </html>`;
 };
 
-const TARGETS = [
-  { data: 'cv.json', out: 'cv.pdf' },
-  { data: 'cv.en.json', out: 'cv-en.pdf' },
-];
-
-module.exports = { buildHtml, read };
+module.exports = { buildHtml, read, readJson };
 
 if (require.main === module) {
   (async () => {
+    const targets = resolveTargets(process.argv.slice(2), { root: ROOT, cwd: process.cwd() });
+    const datasets = targets.map((target) => ({ ...target, cv: readJson(target.dataPath) }));
+
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
-    for (const target of TARGETS) {
+    for (const target of datasets) {
       const page = await browser.newPage();
-      await page.setContent(buildHtml(read(target.data)), { waitUntil: 'networkidle0' });
+      await page.setContent(buildHtml(target.cv), { waitUntil: 'networkidle0' });
       await page.pdf({
-        path: path.join(ROOT, 'assets', target.out),
+        path: target.outPath,
         format: 'A4',
         printBackground: true,
         margin: { top: '0', right: '0', bottom: '0', left: '0' },
@@ -288,12 +288,15 @@ if (require.main === module) {
         () => Math.ceil(document.documentElement.scrollHeight / ((297 * 96) / 25.4))
       );
       if (pages > 1) {
-        console.warn(`AVISO: ${target.out} ocupa ~${pages} páginas. El CV debe caber en una.`);
+        console.warn(`AVISO: ${target.label} ocupa ~${pages} paginas. El CV debe caber en una.`);
       }
-      console.log(`PDF generado: assets/${target.out}`);
+      console.log(`PDF generado: ${target.label}`);
       await page.close();
     }
 
     await browser.close();
-  })();
+  })().catch((err) => {
+    console.error(`ERROR: ${err.message}`);
+    process.exitCode = 1;
+  });
 }
