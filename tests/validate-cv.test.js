@@ -138,3 +138,29 @@ test('detecta un idioma que no es texto', () => {
   cv.languages[0] = { nombre: 'Espanol' };
   assert.ok(hasProblem(cv, 'languages[0]'));
 });
+
+test('sin summary no se exige el titulo de la seccion', () => {
+  const cv = load('cv.json');
+  delete cv.summary;
+  assert.deepStrictEqual(findCvProblems(cv), []);
+});
+
+test('con summary se exige ui.pdf.summary, o el titulo saldria en ingles', () => {
+  const cv = load('cv.json');
+  cv.summary = 'Perfil de negocio con capacidad de construir con IA.';
+  assert.ok(hasProblem(cv, 'ui.pdf.summary'));
+});
+
+test('con summary y su titulo traducido es valido', () => {
+  const cv = load('cv.json');
+  cv.summary = 'Perfil de negocio con capacidad de construir con IA.';
+  cv.ui.pdf.summary = 'Resumen';
+  assert.deepStrictEqual(findCvProblems(cv), []);
+});
+
+test('un summary vacio se detecta en vez de pintar una seccion sin texto', () => {
+  const cv = load('cv.json');
+  cv.summary = '   ';
+  cv.ui.pdf.summary = 'Resumen';
+  assert.ok(hasProblem(cv, 'summary'));
+});

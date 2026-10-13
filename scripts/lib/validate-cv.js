@@ -105,6 +105,17 @@ const findCvProblems = (cv) => {
     problems.push(...checkTextList(cv.languages, 'languages'));
   }
 
+  if ('summary' in cv) {
+    if (!isText(cv.summary)) {
+      problems.push('falta o esta vacio: summary');
+    }
+    if (!isText(valueAt(cv, 'ui.pdf.summary'))) {
+      problems.push(
+        'falta o esta vacio: ui.pdf.summary; sin el, el titulo de la seccion sale en ingles'
+      );
+    }
+  }
+
   return problems;
 };
 

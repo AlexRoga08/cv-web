@@ -73,10 +73,11 @@ variante en ingles, mapea cada entrada a su equivalente por posicion:
 `npm run check:reserve` falla si dejan de estarlo. Traduce el texto del bullet
 que traigas de la reserva; no lo pegues en castellano dentro de un CV ingles.
 
-Slug: `<empresa>-<puesto>` en minusculas y con guiones, por ejemplo
-`acme-head-of-operations`. Si la carpeta ya existe, anade sufijo `-YYYY-MM-DD`
-en vez de sobrescribir: ese registro es la unica prueba de lo que se envio en
-la primera candidatura.
+Slug: `<empresa>-<puesto>-<YYYY-MM-DD>` en minusculas y con guiones, por ejemplo
+`acme-head-of-operations-2026-10-14`. La fecha va SIEMPRE, no solo cuando
+detectas colision: asi dos candidaturas a la misma empresa no pueden pisarse
+aunque olvides comprobarlo, y el registro de lo que se envio la primera vez se
+conserva. Si repites empresa y puesto el mismo dia, anade `-2`.
 
 Pasos, en este orden:
 

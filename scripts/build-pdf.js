@@ -226,7 +226,7 @@ ${contactItems.map((c) => `        <span class="contact-item">${c}</span>`).join
   </div>
 
 ${cv.summary ? `  <div class="section summary">
-    <div class="section-title">${t.summary || 'Summary'}</div>
+    <div class="section-title">${t.summary}</div>
     <p class="summary-text">${cv.summary}</p>
   </div>
 ` : ''}
