@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { resolveTargets } = require('./lib/targets');
 const { readJson } = require('./lib/read-json');
+const { findCvProblems } = require('./lib/validate-cv');
 
 const ROOT = path.join(__dirname, '..');
 const read = (file) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', file), 'utf8'));
@@ -270,7 +271,14 @@ module.exports = { buildHtml, read, readJson };
 if (require.main === module) {
   (async () => {
     const targets = resolveTargets(process.argv.slice(2), { root: ROOT, cwd: process.cwd() });
-    const datasets = targets.map((target) => ({ ...target, cv: readJson(target.dataPath) }));
+    const datasets = targets.map((target) => {
+      const cv = readJson(target.dataPath);
+      const problems = findCvProblems(cv);
+      if (problems.length > 0) {
+        throw new Error(`Datos invalidos en ${target.dataPath}:\n  - ${problems.join('\n  - ')}`);
+      }
+      return { ...target, cv };
+    });
 
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
