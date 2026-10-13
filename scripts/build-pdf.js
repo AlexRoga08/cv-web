@@ -282,27 +282,29 @@ if (require.main === module) {
 
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
-    for (const target of datasets) {
-      const page = await browser.newPage();
-      await page.setContent(buildHtml(target.cv), { waitUntil: 'networkidle0' });
-      await page.pdf({
-        path: target.outPath,
-        format: 'A4',
-        printBackground: true,
-        margin: { top: '0', right: '0', bottom: '0', left: '0' },
-      });
+    try {
+      for (const target of datasets) {
+        const page = await browser.newPage();
+        await page.setContent(buildHtml(target.cv), { waitUntil: 'networkidle0' });
+        await page.pdf({
+          path: target.outPath,
+          format: 'A4',
+          printBackground: true,
+          margin: { top: '0', right: '0', bottom: '0', left: '0' },
+        });
 
-      const pages = await page.evaluate(
-        () => Math.ceil(document.documentElement.scrollHeight / ((297 * 96) / 25.4))
-      );
-      if (pages > 1) {
-        console.warn(`AVISO: ${target.label} ocupa ~${pages} paginas. El CV debe caber en una.`);
+        const pages = await page.evaluate(
+          () => Math.ceil(document.documentElement.scrollHeight / ((297 * 96) / 25.4))
+        );
+        if (pages > 1) {
+          console.warn(`AVISO: ${target.label} ocupa ~${pages} paginas. El CV debe caber en una.`);
+        }
+        console.log(`PDF generado: ${target.label}`);
+        await page.close();
       }
-      console.log(`PDF generado: ${target.label}`);
-      await page.close();
+    } finally {
+      await browser.close();
     }
-
-    await browser.close();
   })().catch((err) => {
     console.error(`ERROR: ${err.message}`);
     process.exitCode = 1;

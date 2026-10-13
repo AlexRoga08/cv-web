@@ -4,6 +4,7 @@ const path = require('node:path');
 const { parseArgs, resolveTargets } = require('../scripts/lib/targets');
 
 const roots = { root: '/repo', cwd: '/repo' };
+const variant = (out) => ['--data', 'private/variants/acme/cv.json', '--out', out];
 
 test('sin argumentos devuelve los dos locales canonicos', () => {
   const targets = resolveTargets([], roots);
@@ -16,10 +17,7 @@ test('sin argumentos devuelve los dos locales canonicos', () => {
 });
 
 test('con --data y --out devuelve un unico objetivo resuelto desde cwd', () => {
-  const targets = resolveTargets(
-    ['--data', 'private/variants/acme/cv.json', '--out', 'private/variants/acme/CV.pdf'],
-    roots
-  );
+  const targets = resolveTargets(variant('private/variants/acme/CV.pdf'), roots);
   assert.strictEqual(targets.length, 1);
   assert.strictEqual(targets[0].dataPath, path.resolve('/repo/private/variants/acme/cv.json'));
   assert.strictEqual(targets[0].outPath, path.resolve('/repo/private/variants/acme/CV.pdf'));
@@ -41,9 +39,39 @@ test('una bandera sin valor aborta', () => {
   assert.throws(() => parseArgs(['--data', '--out']), /Falta el valor/);
 });
 
-test('ignora argumentos desconocidos', () => {
-  assert.deepStrictEqual(parseArgs(['--verbose', '--data', 'a.json', '--out', 'b.pdf']), {
+test('acepta la forma --bandera=valor', () => {
+  assert.deepStrictEqual(parseArgs(['--data=a.json', '--out=b.pdf']), {
     data: 'a.json',
     out: 'b.pdf',
   });
+});
+
+test('--bandera= sin valor aborta', () => {
+  assert.throws(() => parseArgs(['--data=']), /Falta el valor/);
+});
+
+test('una bandera desconocida aborta en vez de caer en los canonicos', () => {
+  assert.throws(() => parseArgs(['--verbose', '--data', 'a.json', '--out', 'b.pdf']), /no reconocida/);
+  assert.throws(() => parseArgs(['--dat=a.json', '--out=b.pdf']), /no reconocida/);
+});
+
+test('un argumento suelto sin -- aborta', () => {
+  assert.throws(() => parseArgs(['a.json']), /no reconocido/);
+});
+
+test('--out dentro del repo y fuera de private/ aborta', () => {
+  assert.throws(() => resolveTargets(variant('assets/cv.pdf'), roots), /private/);
+  assert.throws(() => resolveTargets(variant('CV.pdf'), roots), /private/);
+  assert.throws(() => resolveTargets(variant('en/CV.pdf'), roots), /private/);
+});
+
+test('--out dentro de private/ se acepta', () => {
+  const targets = resolveTargets(variant('private/variants/acme/CV.pdf'), roots);
+  assert.strictEqual(targets[0].outPath, path.resolve('/repo/private/variants/acme/CV.pdf'));
+});
+
+test('--out completamente fuera del repo se acepta', () => {
+  const outside = path.resolve('/otro/sitio/CV.pdf');
+  const targets = resolveTargets(variant(outside), roots);
+  assert.strictEqual(targets[0].outPath, outside);
 });
