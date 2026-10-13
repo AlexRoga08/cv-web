@@ -138,6 +138,9 @@ const buildHtml = (cv) => {
     margin-bottom: 7px;
   }
 
+  /* Summary */
+  .summary-text { font-size: 8pt; color: #5a6a7a; line-height: 1.5; }
+
   /* Skills */
   .skill-group { margin-bottom: 8px; }
   .skill-group-name {
@@ -222,6 +225,11 @@ ${contactItems.map((c) => `        <span class="contact-item">${c}</span>`).join
     </div>
   </div>
 
+${cv.summary ? `  <div class="section summary">
+    <div class="section-title">${t.summary || 'Summary'}</div>
+    <p class="summary-text">${cv.summary}</p>
+  </div>
+` : ''}
   <div class="body">
 
     <!-- Left column -->
