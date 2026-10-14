@@ -116,8 +116,8 @@
       "name": "EligeFactura",
       "url": "https://eligefactura.es",
       "urlLabel": "eligefactura.es",
-      "desc": "Recommender that reads each freelancer's case and tells them which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and turned into affiliate revenue.",
-      "descPdf": "Tells each freelancer which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and turned into affiliate revenue.",
+      "desc": "Recommender that reads each freelancer's case and tells them which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and launched on an affiliate model.",
+      "descPdf": "Tells each freelancer which invoicing software they need to meet Verifactu. Opportunity spotted in the regulatory change and launched on an affiliate model.",
       "techs": [
         "Own project",
         "SEO",
@@ -221,7 +221,7 @@
     {
       "title": "Data &amp; Reporting",
       "badges": [
-        "Advanced Excel",
+        "Excel (pivot tables, VLOOKUP, macros)",
         "Data analysis",
         "KPIs and dashboards",
         "Demand analysis",
