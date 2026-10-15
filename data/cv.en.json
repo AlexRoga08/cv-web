@@ -125,18 +125,6 @@
       ]
     },
     {
-      "name": "Car dealership website",
-      "url": "https://gelodasa.vercel.app",
-      "urlLabel": "gelodasa.vercel.app",
-      "desc": "Commissioned by a car dealership in Galicia. Modern design with animations, structured SEO and a complete digital presence for local lead generation.",
-      "descPdf": "Commissioned by a car dealership in Galicia. Modern design with animations, SEO and a complete digital presence for local lead generation.",
-      "techs": [
-        "Real client",
-        "Corporate website",
-        "SEO"
-      ]
-    },
-    {
       "name": "OpoTrack",
       "url": "https://oposiciones-webapp.vercel.app",
       "urlLabel": "oposiciones-webapp.vercel.app",

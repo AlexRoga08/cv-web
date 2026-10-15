@@ -125,18 +125,6 @@
       ]
     },
     {
-      "name": "Web para concesionario",
-      "url": "https://gelodasa.vercel.app",
-      "urlLabel": "gelodasa.vercel.app",
-      "desc": "Encargo para un concesionario de vehículos en Galicia. Diseño moderno con animaciones, SEO estructurado y presencia digital completa para captación local.",
-      "descPdf": "Encargo para un concesionario en Galicia. Diseño moderno con animaciones, SEO y presencia digital completa para captación local.",
-      "techs": [
-        "Cliente real",
-        "Web corporativa",
-        "SEO"
-      ]
-    },
-    {
       "name": "OpoTrack",
       "url": "https://oposiciones-webapp.vercel.app",
       "urlLabel": "oposiciones-webapp.vercel.app",
