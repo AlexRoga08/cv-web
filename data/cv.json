@@ -139,8 +139,8 @@
   ],
   "experience": [
     {
-      "role": "Sales Executive — Remarketing Account Manager",
-      "dates": "nov. 2024 – Actualidad",
+      "role": "Remarketing Account Manager",
+      "dates": "oct. 2023 – Actualidad",
       "company": "Enterprise Mobility · Galicia, Asturias y León",
       "bullets": [
         "Gestión de toda la región de Galicia: 70 clientes activos anuales, 66 de ellos abiertos por mí, y más de 800 unidades vendidas, en crecimiento sostenido.",
@@ -150,34 +150,45 @@
     },
     {
       "role": "Branch Manager",
-      "dates": "mar. 2022 – nov. 2024",
+      "dates": "feb. 2023 – oct. 2023",
       "company": "Enterprise Mobility · Aeropuerto de Bilbao",
       "bullets": [
         "Oficina del 5.º aeropuerto de España por volumen de tráfico: más de 30 personas a cargo y cuenta de resultados.",
         "Mejora del 12% en revenue de productos opcionales mediante análisis de comportamiento de compra y formación del equipo.",
-        "El 85% de los clientes puntuaba la oficina con un 10, de forma sostenida.",
+        "Satisfacción del cliente sostenida en un 85% de reseñas con la máxima puntuación.",
         "Rediseño de procesos hasta la causa raíz: la entrega en parking se incumplía porque las tablets no tenían cobertura allí; gestioné con AENA la instalación de wifi y reeduqué al equipo para recuperar el proceso."
       ]
     },
     {
-      "role": "Assistant Manager",
-      "dates": "ago. 2020 – mar. 2022",
-      "company": "Enterprise Mobility · Madrid",
+      "role": "Branch Rental Manager",
+      "dates": "ene. 2022 – may. 2023",
+      "company": "Enterprise Mobility · Ourense",
       "bullets": [
-        "Coordinación operativa de múltiples oficinas asegurando objetivos de servicio y rentabilidad.",
-        "Análisis de KPIs e identificación de mejoras operativas y comerciales."
+        "Crecimiento del 37% en días de alquiler al mes en solo un año.",
+        "Mejora de ventas de productos opcionales y control de costes: oficina n.º 1 de oficinas de ciudad de España en el año fiscal.",
+        "Contratación y formación de un Management Trainee que lideró varios meses los resultados de España en oficinas de ciudad y ascendió a Manager 8 meses después."
       ]
     },
     {
-      "role": "Sales Assistant",
-      "dates": "may. 2019 – ago. 2020",
+      "role": "Assistant Branch Manager",
+      "dates": "ago. 2020 – ene. 2022",
       "company": "Enterprise Mobility · Madrid",
       "bullets": [
+        "Coordinación operativa del Aeropuerto de Madrid y de la oficina de Coslada, incluida la gestión de operativa y costes durante la pandemia.",
+        "Onboarding de más de 20 empleados nuevos."
+      ]
+    },
+    {
+      "role": "Management Trainee · Honorary Assistant Manager",
+      "dates": "abr. 2019 – ago. 2020",
+      "company": "Enterprise Mobility · Madrid",
+      "bullets": [
+        "Desde feb. 2020, gestión diaria del equipo y de la oficina del Aeropuerto de Madrid.",
         "Atención al cliente, gestión de contratos y venta de productos opcionales."
       ]
     },
     {
-      "role": "Administrativo",
+      "role": "Administrativo de obra",
       "dates": "jul. 2017 – abr. 2018",
       "company": "Ferrovial Agroman · Valladolid",
       "bullets": [
